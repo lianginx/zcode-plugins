@@ -9,6 +9,18 @@
       "source": "./code-review"
     },
     {
+      "name": "code-simplifier",
+      "description": "代码精简工具包：simplify 子智能体与 /simplify 命令，对最近改动的代码做保功能重构——降低嵌套、消除冗余、统一项目规范，改完自检编译与测试。",
+      "version": "1.0.0",
+      "icon": "https://raw.githubusercontent.com/lianginx/zcode-plugins/main/assets/code-simplifier.svg",
+      "source": "./code-simplifier",
+      "category": "productivity",
+      "tags": [
+        "refactor",
+        "code-quality"
+      ]
+    },
+    {
       "name": "title",
       "description": "会话标题速记：/title 用 10 字内标题总结本次会话。",
       "version": "1.0.0",

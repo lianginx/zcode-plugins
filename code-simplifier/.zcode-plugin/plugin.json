@@ -1,0 +1,14 @@
+{
+  "name": "code-simplifier",
+  "version": "1.0.0",
+  "description": "代码精简工具包：simplify 子智能体与 /simplify 命令，对最近改动的代码做保功能重构——降低嵌套、消除冗余、统一项目规范，改完自检编译与测试。",
+  "description_i18n": {
+    "en": "Code simplification toolkit: a simplify subagent plus a /simplify command that refines recently modified code — flattening nesting, removing redundancy, applying project standards — while preserving all functionality, with self-checks after edits.",
+    "zh-CN": "代码精简工具包：simplify 子智能体与 /simplify 命令，对最近改动的代码做保功能重构——降低嵌套、消除冗余、统一项目规范，改完自检编译与测试。"
+  },
+  "author": {
+    "name": "liang"
+  },
+  "commands": "commands",
+  "agents": "agents"
+}

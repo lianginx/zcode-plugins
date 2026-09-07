@@ -1,5 +1,5 @@
 {
-  "name": "anysearch",
+  "name": "any-search",
   "version": "1.0.0",
   "description": "AnySearch MCP：并行通用搜索、垂类检索与网页正文抽取。",
   "description_i18n": {
@@ -24,7 +24,7 @@
     }
   },
   "mcpServers": {
-    "anysearch": {
+    "any-search": {
       "type": "http",
       "url": "https://api.anysearch.com/mcp",
       "headers": {

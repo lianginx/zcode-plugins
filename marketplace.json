@@ -45,11 +45,11 @@
       ]
     },
     {
-      "name": "anysearch",
+      "name": "any-search",
       "description": "AnySearch MCP 服务器：并行通用搜索、垂类检索与网页正文抽取。安装后在插件详情填 API Key。",
       "version": "1.0.0",
-      "icon": "https://raw.githubusercontent.com/lianginx/zcode-plugins/main/assets/anysearch.svg",
-      "source": "./anysearch",
+      "icon": "https://raw.githubusercontent.com/lianginx/zcode-plugins/main/assets/any-search.svg",
+      "source": "./any-search",
       "category": "productivity",
       "tags": [
         "search",

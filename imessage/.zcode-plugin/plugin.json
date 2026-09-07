@@ -1,0 +1,20 @@
+{
+  "name": "imessage",
+  "version": "1.0.0",
+  "description": "iMessage/短信：通过 imsg CLI 在本机 Messages.app 上读历史、搜消息、监听新消息、收发文本与附件。发送前强制人工确认。仅 macOS。",
+  "description_i18n": {
+    "en": "iMessage/SMS via the imsg CLI: read history, search, watch, and send through the local Messages.app. Every send requires explicit user confirmation. macOS only.",
+    "zh-CN": "iMessage/短信：通过 imsg CLI 在本机 Messages.app 上读历史、搜消息、监听新消息、收发文本与附件。发送前强制人工确认。仅 macOS。"
+  },
+  "author": {
+    "name": "liang"
+  },
+  "license": "MIT",
+  "keywords": [
+    "imessage",
+    "messages",
+    "sms",
+    "macos"
+  ],
+  "skills": "skills"
+}

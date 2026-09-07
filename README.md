@@ -7,6 +7,7 @@
 - **title** — `/title`，10 字内标题总结本次会话。
 - **only-chat** — `/only-chat`，只回答，禁止写入/编辑/删除；只读命令与联网查询不受限。
 - **any-search** — 把 AnySearch MCP 服务器打包成插件（http + `Authorization` 请求头），随插件启停加载。
+- **imessage** — 两个技能，基于 [imsg](https://github.com/openclaw/imsg) CLI 读写本机 Messages.app（列会话/读搜历史/监听/发送/附件）。`imessage`：交互收发，发送前强制向用户复述收件人与内容；`imessage-notify`：定时任务无人值守向固定预授权收件人汇报任务结果，收件人与内容来源双锁定。仅 macOS，需 `brew install steipete/tap/imsg` 与完全磁盘访问、自动化权限。
 
 ## 安装与生效
 

@@ -56,6 +56,19 @@
         "web",
         "mcp"
       ]
+    },
+    {
+      "name": "imessage",
+      "description": "iMessage/短信：通过 imsg CLI 在本机 Messages.app 上读历史、搜消息、监听新消息、收发文本与附件。交互发送强制人工确认；另含 imessage-notify 技能，供定时任务无人值守向固定预授权收件人汇报。仅 macOS，需 brew install steipete/tap/imsg。",
+      "version": "1.0.0",
+      "icon": "https://raw.githubusercontent.com/lianginx/zcode-plugins/main/assets/imessage.svg",
+      "source": "./imessage",
+      "category": "productivity",
+      "tags": [
+        "imessage",
+        "messaging",
+        "macos"
+      ]
     }
   ]
 }

@@ -1,10 +1,10 @@
 {
   "name": "code-review",
-  "version": "1.0.0",
-  "description": "代码审查工具包：只读审查子智能体与 /review 命令，支持未提交改动、commit、分支差异与 GitHub PR。",
+  "version": "1.1.0",
+  "description": "代码审查工具包：只读审查子智能体与 /review 命令，支持未提交改动、commit、分支差异与 GitHub PR；多角度审查，逐条复核过滤误报。",
   "description_i18n": {
-    "en": "Code review toolkit: a read-only review subagent plus a /review command.",
-    "zh-CN": "代码审查工具包：只读审查子智能体与 /review 命令，支持未提交改动、commit、分支差异与 GitHub PR。"
+    "en": "Code review toolkit: a read-only review subagent plus a /review command, with multi-angle review and per-issue re-verification to filter false positives.",
+    "zh-CN": "代码审查工具包：只读审查子智能体与 /review 命令，支持未提交改动、commit、分支差异与 GitHub PR；多角度审查，逐条复核过滤误报。"
   },
   "author": {
     "name": "liang"

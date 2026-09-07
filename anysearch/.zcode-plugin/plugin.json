@@ -1,0 +1,36 @@
+{
+  "name": "anysearch",
+  "version": "1.0.0",
+  "description": "AnySearch MCP：并行通用搜索、垂类检索与网页正文抽取。",
+  "description_i18n": {
+    "en": "AnySearch MCP server: parallel general search, vertical search, and page extraction.",
+    "zh-CN": "AnySearch MCP：并行通用搜索、垂类检索与网页正文抽取。"
+  },
+  "author": {
+    "name": "liang"
+  },
+  "license": "MIT",
+  "keywords": [
+    "search",
+    "web",
+    "mcp"
+  ],
+  "userConfig": {
+    "api_key": {
+      "title": "AnySearch API Key",
+      "description": "形如 as_sk_xxx，只用于拼进 Authorization 请求头。",
+      "type": "string",
+      "required": true
+    }
+  },
+  "mcpServers": {
+    "anysearch": {
+      "type": "http",
+      "url": "https://api.anysearch.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_key}"
+      },
+      "timeoutMs": 90000
+    }
+  }
+}

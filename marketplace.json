@@ -1,0 +1,48 @@
+{
+  "name": "liang-plugins",
+  "plugins": [
+    {
+      "name": "code-review",
+      "description": "代码审查工具包：只读审查子智能体与 /review 命令，支持未提交改动、commit、分支差异与 GitHub PR。",
+      "icon": "https://raw.githubusercontent.com/lianginx/zcode-plugins/main/assets/code-review.svg",
+      "source": "./code-review"
+    },
+    {
+      "name": "title",
+      "description": "会话标题速记：/title 用 10 字内标题总结本次会话。",
+      "version": "1.0.0",
+      "icon": "https://raw.githubusercontent.com/lianginx/zcode-plugins/main/assets/title.svg",
+      "source": "./title",
+      "category": "productivity",
+      "tags": [
+        "session",
+        "title"
+      ]
+    },
+    {
+      "name": "only-chat",
+      "description": "只回答模式：/only-chat 让 Agent 只回答问题，禁止写入、编辑、删除。",
+      "version": "1.0.0",
+      "icon": "https://raw.githubusercontent.com/lianginx/zcode-plugins/main/assets/only-chat.svg",
+      "source": "./only-chat",
+      "category": "productivity",
+      "tags": [
+        "readonly",
+        "session"
+      ]
+    },
+    {
+      "name": "anysearch",
+      "description": "AnySearch MCP 服务器：并行通用搜索、垂类检索与网页正文抽取。安装后在插件详情填 API Key。",
+      "version": "1.0.0",
+      "icon": "https://raw.githubusercontent.com/lianginx/zcode-plugins/main/assets/anysearch.svg",
+      "source": "./anysearch",
+      "category": "productivity",
+      "tags": [
+        "search",
+        "web",
+        "mcp"
+      ]
+    }
+  ]
+}

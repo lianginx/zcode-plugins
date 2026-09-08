@@ -1,6 +1,6 @@
 {
   "name": "context7",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Context7 MCP：查询最新版本文档与代码示例。",
   "description_i18n": {
     "en": "Context7 MCP server: pull version-specific docs and code examples from source repositories.",
@@ -19,7 +19,8 @@
       "title": "Context7 API Key",
       "description": "在 https://context7.com/dashboard 创建。留空则匿名使用（共享速率限制）。",
       "type": "string",
-      "required": false
+      "required": false,
+      "default": ""
     }
   },
   "mcpServers": {

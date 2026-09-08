@@ -73,7 +73,7 @@
     {
       "name": "context7",
       "description": "Context7 MCP 服务器：从源码仓库拉取最新版本文档与代码示例。安装后在插件详情填 API Key（可留空匿名使用）。",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "icon": "https://raw.githubusercontent.com/lianginx/zcode-plugins/main/assets/context7.svg",
       "source": "./context7",
       "category": "productivity",

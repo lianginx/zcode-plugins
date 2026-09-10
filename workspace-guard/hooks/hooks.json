@@ -1,0 +1,17 @@
+{
+  "description": "工作区优先权限模式：区内读写与无路径 MCP 免确认；其余一切统一弹确认，fail-closed（搭配完全访问使用）",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "process",
+            "command": "node",
+            "args": ["${ZCODE_PLUGIN_ROOT}/hooks/guard.mjs"],
+            "timeoutMs": 3000
+          }
+        ]
+      }
+    ]
+  }
+}

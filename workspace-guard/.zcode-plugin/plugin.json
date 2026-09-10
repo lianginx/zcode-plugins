@@ -1,0 +1,18 @@
+{
+  "name": "workspace-guard",
+  "version": "1.0.0",
+  "description": "工作区围栏：PreToolUse 钩子监控全部工具调用——工作区优先权限模式（搭配完全访问使用）：区内读写、参数不含路径的 MCP 工具、WebFetch/WebSearch 免确认放行；其余一切（区外读写、含路径的 MCP、未知工具、异常输入）统一弹人工确认，无弃权、fail-closed；弹窗点过的「始终允许」会被记住。",
+  "description_i18n": {
+    "en": "Workspace fence: a PreToolUse hook watches every tool call and workspace-first permission mode (pair with full access): in-workspace file ops, path-free MCP tools and WebFetch/WebSearch run silently; everything else (out-of-bounds access, path-bearing MCP args, unknown tools, malformed input) asks the user — no abstention, fail-closed.",
+    "zh-CN": "工作区围栏：PreToolUse 钩子监控全部工具调用——工作区优先权限模式（搭配完全访问使用）：区内读写、参数不含路径的 MCP 工具、WebFetch/WebSearch 免确认放行；其余一切（区外读写、含路径的 MCP、未知工具、异常输入）统一弹人工确认，无弃权、fail-closed；弹窗点过的「始终允许」会被记住。"
+  },
+  "author": {
+    "name": "liang"
+  },
+  "license": "MIT",
+  "keywords": [
+    "security",
+    "hooks",
+    "guard"
+  ]
+}

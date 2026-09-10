@@ -9,7 +9,7 @@
 - **any-search** — 把 AnySearch MCP 服务器打包成插件（http + `Authorization` 请求头），随插件启停加载。
 - **context7** — 把 Context7 远程 MCP 服务器打包成插件（http + `Authorization` 请求头），从源码仓库拉取最新版本文档与代码示例；API Key 在插件详情填，留空匿名使用。
 - **imessage** — 两个技能，基于 [imsg](https://github.com/openclaw/imsg) CLI 读写本机 Messages.app（列会话/读搜历史/监听/发送/附件）。`imessage`：交互收发，发送前强制向用户复述收件人与内容；`imessage-notify`：定时任务无人值守向固定预授权收件人汇报任务结果，收件人与内容来源双锁定。仅 macOS，需 `brew install steipete/tap/imsg` 与完全磁盘访问、自动化权限。
-- **workspace-guard** — 工作区围栏（白名单快速通道）：`PreToolUse` 钩子监控全部工具调用，**搭配「完全访问」权限模式**使用——底座全放行，插件即权限模式本身。`PreToolUse` 钩子免确认放行：工作区内读写（文件工具与 `Bash`，含 `..`/软链消解）、参数不含路径特征的 `mcp__*` 工具（结构判定不认名字，新装网络类 MCP 自动免确认）、内置 WebFetch/WebSearch；统一弹人工确认（无弃权、fail-closed）：区外读写、含路径特征的 MCP 参数、无法归类的工具（Agent、TodoWrite 等）、异常输入。弹窗点「始终允许本项目」后，插件会代查 ZCode 规则表（`local_setting` 的 permission/ruleset）——同样的命令原文或 `前缀:*`、整工具规则此后静默放行。静态扫描与结构判定可被刻意伪装绕过，是工作区围栏不是沙箱。
+- **workspace-guard** — 工作区围栏（白名单快速通道）：`PreToolUse` 钩子监控全部工具调用，**搭配「完全访问」权限模式**使用——底座全放行，插件即权限模式本身。`PreToolUse` 钩子免确认放行：工作区内读写（文件工具与 `Bash`，含 `..`/软链消解）、参数不含路径特征的 `mcp__*` 工具（结构判定不认名字，新装网络类 MCP 自动免确认）、内置 WebFetch/WebSearch、会话内工具（待办、`Agent`/`Skill`/定时任务管理等——只操纵对话状态，子智能体与定时任务的真实工具调用会在各自会话里再过一遍钩子）；统一弹人工确认（无弃权、fail-closed）：区外读写、含路径特征的 MCP 参数、未列入放行清单的未知工具、异常输入。弹窗点「始终允许本项目」后，插件会代查 ZCode 规则表（`local_setting` 的 permission/ruleset）——同样的命令原文或 `前缀:*`、整工具规则此后静默放行。静态扫描与结构判定可被刻意伪装绕过，是工作区围栏不是沙箱。
 
 ## 安装与生效
 

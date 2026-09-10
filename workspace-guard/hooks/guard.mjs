@@ -12,13 +12,16 @@
 //     3) mcp__* 工具的参数值里不含任何路径特征——参数层面碰不到文件，
 //        不关联工作目录（结构判定不认名字，新装网络类 MCP 自动免确认）；
 //     4) 内置网络工具 WebFetch / WebSearch；
-//     5) 无路径参数的文件工具（操作对象即工作区根）。
+//     5) 会话内工具（TodoWrite/Agent/Skill/TaskOutput/Cron* 等）——只操纵
+//        对话状态与任务编排，不直接碰文件系统；子智能体与定时任务的真实
+//        工具调用会在各自会话里被本钩子再过一遍；
+//     6) 无路径参数的文件工具（操作对象即工作区根）。
 //   "ask" -> 需要用户过目，弹确认：
 //     1) 路径解析后在区外（文件工具 / Bash token / MCP file_path）；
 //     2) MCP 参数含路径特征但形态判不准（如 /vercel/next.js 式标识符）；
 //     3) 输入异常、判定出错——闸门自身故障宁可多弹窗，不静默放行。
 //   无弃权 -> 判不了的一律 ask（fail-closed）：无法归类的内置工具
-//     （Agent、TodoWrite 等）、输入异常、判定出错。本插件即权限模式本身，
+//     （未列入放行清单的新工具）、输入异常、判定出错。本插件即权限模式本身，
 //     沉默等于放行，所以守卫只在有把握时 allow，其余全部交用户过目。
 //
 // 如实声明的边界：
@@ -124,6 +127,23 @@ const PATH_TOOLS = new Set([
 
 // 内置网络工具：不关联工作目录，直接放行。
 const NETWORK_TOOLS = new Set(["WebFetch", "WebSearch"]);
+
+// 会话内工具：只操纵对话状态 / 任务编排，不直接碰文件系统，直接放行。
+//   - Agent/SendMessage：子智能体自己会话里的每次工具调用同样被本钩子管，
+//     真实文件访问在叶子调用处拦截，入口无需重复拦；
+//   - Cron*：只是管理定时任务定义，到点执行时那次会话同样被钩子管；
+//   - TaskOutput/TaskStop：读写的是 ZCode 受管临时目录里的任务输出；
+//   - AskUserQuestion/ExitPlanMode：弹给用户批的动作，拦它等于自己拦自己。
+const SESSION_TOOLS = new Set([
+  "TodoWrite", "TodoRead",
+  "AskUserQuestion",
+  "EnterPlanMode", "ExitPlanMode",
+  "Skill",
+  "Agent", "SendMessage",
+  "TaskOutput", "TaskStop",
+  "ReadSessionContext",
+  "CronCreate", "CronUpdate", "CronDelete", "CronList",
+]);
 
 // —— 桥接底座「始终允许本项目」规则 ——
 // 钩子的 PreToolUse 决策跑在客户端权限规则之前，弹窗里点的「始终允许」
@@ -249,6 +269,9 @@ if (PATH_TOOLS.has(input.tool_name)) {
   }
   judgePath(target);
 }
+
+// 会话内工具先行放行，不进入后续路径判定。
+if (SESSION_TOOLS.has(input.tool_name)) allow("会话内工具，不直接碰文件系统");
 
 // 其他工具，按顺序三道闸：
 // 1) 字符串 file_path/notebook_path 参数 -> 路径判定；

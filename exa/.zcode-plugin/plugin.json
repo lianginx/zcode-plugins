@@ -1,0 +1,37 @@
+{
+  "name": "exa",
+  "version": "1.0.0",
+  "description": "Exa MCP：语义网络搜索与网页正文抓取。",
+  "description_i18n": {
+    "en": "Exa MCP server: neural web search and page extraction.",
+    "zh-CN": "Exa MCP：语义网络搜索与网页正文抓取。"
+  },
+  "author": {
+    "name": "liang"
+  },
+  "license": "MIT",
+  "keywords": [
+    "search",
+    "web",
+    "mcp"
+  ],
+  "userConfig": {
+    "api_key": {
+      "title": "Exa API Key",
+      "description": "在 https://dashboard.exa.ai/api-keys 创建，用于 x-api-key 请求头；留空则匿名使用（共享速率限制），填 Key 后走自己的套餐与限额。",
+      "type": "string",
+      "required": false,
+      "default": ""
+    }
+  },
+  "mcpServers": {
+    "exa": {
+      "type": "http",
+      "url": "https://mcp.exa.ai/mcp",
+      "headers": {
+        "x-api-key": "${user_config.api_key}"
+      },
+      "timeoutMs": 90000
+    }
+  }
+}
